@@ -51,7 +51,7 @@
   "navigation": [
     {
       "group": "Get Started",
-      "pages": ["quickstart", "registry"]
+      "pages": ["quickstart", "registry", "tutorials/contributing"]
     },
     {
       "group": "Tutorials",

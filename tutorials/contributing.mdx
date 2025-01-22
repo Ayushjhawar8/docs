@@ -5,200 +5,29 @@ description: "Guide to contributing to tscircuit repositories"
 
 # Contributing to tscircuit
 
-tscircuit is organized into several specialized repositories that work together to provide a complete circuit design ecosystem. This guide will help you understand each repository's purpose and how to contribute effectively.
-
 ## Core Repositories
 
-### [tscircuit/tscircuit](https://github.com/tscircuit/tscircuit)
-React for Circuits - The main monorepo containing the core packages:
-- `@tscircuit/builder`: Core circuit building primitives
-- `@tscircuit/react`: React components for circuit creation
-- `@tscircuit/schematic-viewer`: Schematic visualization
-- `@tscircuit/pcb-viewer`: PCB visualization
-- `@tscircuit/router`: Auto-routing engine for PCB traces
-- `@tscircuit/soup`: Low-level circuit representation format
-
-### [tscircuit/core](https://github.com/tscircuit/core)
-Create electronics with TypeScript:
-- Core electronics primitives
-- Base component definitions
-- Circuit validation logic
-- Fundamental circuit types
-
-### [tscircuit/jscad-fiber](https://github.com/tscircuit/jscad-fiber)
-Create 3D CAD models with React using JSCAD:
-- React components for JSCAD primitives
-- Boolean operations (union, subtract)
-- Transformations and extrusions
-- Used by tscircuit for 3D component models
-
-### [tscircuit/builder](https://github.com/tscircuit/builder)
-Create 3D CAD models with React:
-- 3D component modeling
-- PCB visualization
-- Component placement
-- Board layout tools
-
-### [tscircuit/schematic-symbols](https://github.com/tscircuit/schematic-symbols)
-Schematic symbols for tscircuit:
-- Standard electrical symbols
-- Custom symbol creation
-- Symbol library management
-- Reusable symbol components
-
-### [tscircuit/snippets](https://github.com/tscircuit/snippets)
-Code snippets and examples:
-- Common circuit patterns
-- Component usage examples
-- Best practices
-- Quick start templates
-
-### [tscircuit/docs](https://github.com/tscircuit/docs)
-The documentation site at [docs.tscircuit.com](https://docs.tscircuit.com):
-- Getting started guides
-- API reference
-- Component documentation
-- Tutorials and examples
+| Repository | Description | Skills | Issues |
+|------------|-------------|---------|---------|
+| [tscircuit/tscircuit](https://github.com/tscircuit/tscircuit) | Main monorepo with core packages for circuit building, React components, visualization, and routing | TypeScript, React, Electronics | [![GitHub issues](https://img.shields.io/github/issues/tscircuit/tscircuit)](https://github.com/tscircuit/tscircuit/issues) |
+| [tscircuit/core](https://github.com/tscircuit/core) | Core electronics primitives and circuit validation | TypeScript, Electronics | [![GitHub issues](https://img.shields.io/github/issues/tscircuit/core)](https://github.com/tscircuit/core/issues) |
+| [tscircuit/jscad-fiber](https://github.com/tscircuit/jscad-fiber) | React components for 3D CAD modeling using JSCAD | TypeScript, React, CAD | [![GitHub issues](https://img.shields.io/github/issues/tscircuit/jscad-fiber)](https://github.com/tscircuit/jscad-fiber/issues) |
+| [tscircuit/builder](https://github.com/tscircuit/builder) | 3D component modeling and PCB visualization | TypeScript, React, CAD | [![GitHub issues](https://img.shields.io/github/issues/tscircuit/builder)](https://github.com/tscircuit/builder/issues) |
+| [tscircuit/schematic-symbols](https://github.com/tscircuit/schematic-symbols) | Standard electrical symbol library | SVG, Electronics | [![GitHub issues](https://img.shields.io/github/issues/tscircuit/schematic-symbols)](https://github.com/tscircuit/schematic-symbols/issues) |
+| [tscircuit/docs](https://github.com/tscircuit/docs) | Documentation at docs.tscircuit.com | Technical Writing, MDX | [![GitHub issues](https://img.shields.io/github/issues/tscircuit/docs)](https://github.com/tscircuit/docs/issues) |
 
 ## Tool Repositories
 
-### [tscircuit/cli](https://github.com/tscircuit/cli)
-The tscircuit command line tool:
-- `tsci` command line interface
-- Development environment
-- Project initialization
-- Package management
-
-### [tscircuit/react-fiber](https://github.com/tscircuit/react-fiber)
-React bindings and types:
-- Builder to React bindings
-- React type definitions
-- Component rendering logic
-
-### [tscircuit/routing](https://github.com/tscircuit/routing)
-Circuit routing algorithms:
-- Schematic trace routing
-- PCB trace routing
-- Auto-routing logic
-
-### [tscircuit/autolayout](https://github.com/tscircuit/autolayout)
-Layout algorithms:
-- Schematic component placement
-- Automatic layout optimization
-- Spacing and arrangement logic
-
-### [tscircuit/footprinter](https://github.com/tscircuit/footprinter)
-DSL for creating footprints:
-- Footprint definition language
-- Component package creation
-- Standardized footprint generation
-
-### [tscircuit/kicad-mod-converter](https://github.com/tscircuit/kicad-mod-converter)
-KiCad format conversion:
-- Convert kicad_mod files to JSON
-- Convert JSON to kicad_mod
-- Footprint format translation
-
-### [tscircuit/kicad-viewer](https://github.com/tscircuit/kicad-viewer)
-KiCad footprint visualization:
-- View official KiCad footprints
-- Online footprint browser
-- Component preview
-
-## Development Setup
-
-1. **Clone the Repository**
-```bash
-git clone https://github.com/tscircuit/<repository>
-cd <repository>
-```
-
-2. **Install Dependencies**
-```bash
-# Install bun if you haven't already
-curl -fsSL https://bun.sh/install | bash
-
-# Install project dependencies
-bun install
-```
-
-3. **Start Development Server**
-```bash
-# For tscircuit/tscircuit
-bun run dev
-
-# For tscircuit/web
-bun run dev
-
-# For tscircuit/docs
-bun run start
-
-# For converters
-bun run build && bun run test
-```
-
-## Contributing Guidelines
-
-1. **Choose the Right Repository**
-   - Bug fixes go to the repository where the bug exists
-   - New components go to tscircuit/core or tscircuit/tscircuit
-   - Documentation updates go to tscircuit/docs
-   - Web features go to tscircuit/web
-   - Symbols go to tscircuit/schematic-symbols
-   - Example code goes to tscircuit/snippets
-   - CLI improvements go to tscircuit/cli
-   - Routing algorithms go to tscircuit/routing
-   - Layout algorithms go to tscircuit/autolayout
-
-2. **Create an Issue First**
-   - Describe the problem or enhancement
-   - Get feedback from maintainers
-   - Link to related issues/PRs
-
-3. **Development Process**
-   ```bash
-   # Fork and clone the repository
-   git clone https://github.com/<your-username>/<repository>
-   
-   # Create a feature branch
-   git checkout -b feature/your-feature-name
-   
-   # Make your changes
-   # Run tests and linting
-   bun run test
-   bun run lint
-   
-   # Commit with clear message
-   git commit -m "feat: add new component for motor control"
-   
-   # Push and create PR
-   git push origin feature/your-feature-name
-   ```
-
-4. **Code Quality**
-   - Write tests for new features
-   - Update documentation
-   - Follow existing code style
-   - Use TypeScript strictly
-   - Add comments for complex logic
-
-5. **Pull Request Guidelines**
-   - Reference related issues
-   - Include screenshots for UI changes
-   - Update documentation
-   - Add tests
-   - Keep changes focused
+| Repository | Description | Skills | Issues |
+|------------|-------------|---------|---------|
+| [tscircuit/cli](https://github.com/tscircuit/cli) | Command line interface and development tools | TypeScript, CLI | [![GitHub issues](https://img.shields.io/github/issues/tscircuit/cli)](https://github.com/tscircuit/cli/issues) |
+| [tscircuit/routing](https://github.com/tscircuit/routing) | Circuit and PCB trace routing algorithms | TypeScript, Algorithms | [![GitHub issues](https://img.shields.io/github/issues/tscircuit/routing)](https://github.com/tscircuit/routing/issues) |
+| [tscircuit/autolayout](https://github.com/tscircuit/autolayout) | Automatic component placement and layout optimization | TypeScript, Algorithms | [![GitHub issues](https://img.shields.io/github/issues/tscircuit/autolayout)](https://github.com/tscircuit/autolayout/issues) |
+| [tscircuit/footprinter](https://github.com/tscircuit/footprinter) | DSL for creating component footprints | TypeScript, DSL | [![GitHub issues](https://img.shields.io/github/issues/tscircuit/footprinter)](https://github.com/tscircuit/footprinter/issues) |
 
 ## Getting Help
 
-- Join our [Discord community](https://tscircuit.com/community/join-redirect)
-- Create an issue in the relevant repository
-- Check existing issues and discussions
-- Email us at contact@tscircuit.com
+- [Discord Community](https://tscircuit.com/community/join-redirect)
+- [Create an Issue](https://github.com/tscircuit/tscircuit/issues/new)
+- Email: contact@tscircuit.com
 
-## Additional Resources
-
-- [TypeScript Documentation](https://www.typescriptlang.org/docs/)
-- [React Documentation](https://react.dev/)
-- [PCB Design Basics](https://learn.sparkfun.com/tutorials/pcb-basics)
-- [Electronic Components](https://www.electronics-tutorials.ws/category/basic)
